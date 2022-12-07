@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title> IMAGE CAPTION GENERATOR </title>
+	<link rel="manifest" href="manifest.json" />
+	<link rel="stylesheet" href="../static/index.css" />
+	<link rel="icon" href="favicon.png" sizes="256x256"/>
+	<link rel="apple-touch-icon" href="favicon.png" />
+    
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+	<script src='https://unpkg.com/tesseract.js@2.1.4/dist/tesseract.min.js'></script>
+</head>
+
+<body >
+    <nav class="navba" id="header">
+        <div class="items container flex items-center ">
+          <div class="navlogo  text-6xl font-bold text-white flex items-center ">
+             <!-- <img src="./Mask Group.png" alt="" />  -->
+            <svg
+              id="svg"
+              width="4"
+              height="71"
+              viewBox="0 0 4 71"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="2.49985"
+                y1="0.0214264"
+                x2="1.49985"
+                y2="70.0214"
+                stroke="#FF0A0A"
+                stroke-width="12"
+              />
+            </svg>
+            NS
+            <span id="logotext" style= "color: red" >
+              DEV.
+            </span>
+          </div>
+          <ul class=" m-5 flex  items-center  ">
+            <Link to="/">
+              <li class="navitem">Home</li>
+            </Link>
+             <Link to="/">
+              <li class="navitem">About me</li>
+            </Link> */}
+            <Link to="/Services">
+              <li class="navitem">Services</li>
+            </Link>
+            <Link to="/">
+              <li class="navitem">for query</li>
+            </Link>
+          </ul>
+        </div>
+      </nav>
+<section id="main" class="home">
+
+	<div class="intro"  style= "color: white">
+		<h4 class="text-4xl">Hi, This is an Image Caption Generator</h4>
+		<div  class="text-3xl" id="intro1" style="color:red;">
+			<h1>By Naman Garg & Shivansh Bhardwaj <br> <span >Under the mentorship of Anuradha Gupta Mam.</span> </h1>
+	
+		
+		</div>
+
+	</div>
+	<div style="margin-top:30px"><form class="form-inline text-white" enctype="multipart/form-data" action="/generate" method="POST">
+		<label><b>Image: &nbsp;&nbsp; </b></label>
+		<input type="file" class="form-control" name="image">
+
+		<button type="submit" class="btn btn-primary"> Submit</button>
+	</form>
+
+	<br>
+	
+
+	{% if results %}
+		<div class=" text-white">
+			<!-- <div class="">
+				<img src="{{results.image}}" style="height: 250px;width:250px">
+			</div> -->
+			<div class="">
+
+				<p class="text">Generated Caption : </p>
+				<p><b> {{results.description}} </b> </p>
+			</div>
+	{% endif %}</div>
+	
+</section>
+
+
+<script src="./index.js"></script>
+
+</body>
+</html>
